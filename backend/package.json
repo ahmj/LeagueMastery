@@ -1,0 +1,24 @@
+{
+  "name": "LeagueMastery",
+  "version": "0.0.1",
+  "description": "The backend system required to store, retrieve, and respond to notification requests from the LeagueMastery extension",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahmj/LeagueMastery"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahmj/LeagueMastery/issues"
+  },
+  "homepage": "https://github.com/ahmj/LeagueMastery",
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "express": "^4.13.4",
+    "redis": "^2.6.0-1"
+  }
+}
