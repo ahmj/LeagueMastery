@@ -1,6 +1,7 @@
 var express = require('express');
 var api = require('leagueapi');
 var nodeCache = require('node-cache');
+var championJson = require('../data/champions.json');
 
 var router = express.Router();
 var cache = new nodeCache({stdTTL: 3600, checkperiod: 300});
@@ -9,8 +10,8 @@ var CHAMPION_SCORE_FACTOR = 5;
 
 api.init(process.env.API_KEY);
 router.use(function summonerLog(req, res, next) {
-	if (req.params.id) {
-		console.log("Summoner: " + req.params.id + "Time: " + Date.now());
+	if (req.params.summoner) {
+		console.log("Summoner: " + req.params.summoner + "Time: " + Date.now());
 	};
 	next();
 });
@@ -34,7 +35,8 @@ router.get('/:summoner/:region', function(req, res, next) {
 			var data = [];
 			for (var i=0; i < champions.length; i++) {
 				if (!champions[i].chestGranted) {
-					data.push(calculateScore(champions[i]));
+					addToChampion(champions[i]);
+					data.push(champions[i]);
 				}
 			}
 			data.sort(function (a, b) {return b.score - a.score});
@@ -44,6 +46,10 @@ router.get('/:summoner/:region', function(req, res, next) {
 	});
 });
 
+function addToChampion(champion) {
+	calculateScore(champion);
+	appendChampionName(champion);
+}
 function calculateScore(champion) {
 	var champion_grade_factor = 0;
 	if (champion.highestGrade) {
@@ -71,8 +77,13 @@ function calculateGradeScore(grade) {
 	}
 	return score;
 }
+
+function appendChampionName(champion) {
+	champion.name = championJson.data[champion.championId].name;
+	return champion;
+}
+
 module.exports = router;
 /*
 TODO: - Incorperate champion.gg roles and winrates
-	  - Add names of champions to data set
 */
