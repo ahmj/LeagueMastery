@@ -12,8 +12,9 @@ module.exports = {
 			return;
 		}
 		catch (err) {
+			fs.writeFileSync(fileName, JSON.stringify({message: ""}));
 			api.statistics.all(function(err, data) {
-				if (err) {return next(err);}
+				if (err) {fs.unlinkSync(fileName); return callback(err);}
 				var json = JSON.stringify(data);
 				fs.writeFile(fileName, json, 'utf8', callback);
 				return;
