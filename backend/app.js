@@ -15,6 +15,6 @@ app.use(function(err, req, res, next) {
 	res.status(err.status || 500);
 	res.send(err.message);
 });
-app.listen(3000, function() {
+app.listen(port, function() {
 	console.log('App listening on port: 3000');
 });
