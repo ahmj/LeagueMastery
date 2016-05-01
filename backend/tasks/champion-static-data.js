@@ -12,10 +12,9 @@ module.exports = {
 			return;
 		}
 		catch (err) {
-			fs.writeFileSync(fileName, JSON.stringify({message: ""}));
 			var options = {dataById:true};
 			api.Static.getChampionList(options, function(err, champions) {
-				if (err) {fs.unlinkSync(fileName); return callback(err);}
+				if (err) {return callback(err);}
 				var json = JSON.stringify(champions, null, 4);
 				fs.writeFile(fileName, json, 'utf8', callback);
 				return;

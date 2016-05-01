@@ -1,21 +1,16 @@
 var express = require('express');
 var api = require('leagueapi');
 var nodeCache = require('node-cache');
-var championJson = require('../data/champions.json');
-var ggJson = require('../data/static-gg.json');
+var staticJson = require('../data/static-data');
 
 var router = express.Router();
 var cache = new nodeCache({stdTTL: 3600, checkperiod: 300});
 
 var CHAMPION_SCORE_FACTOR = 1.3;
 var CHAMPION_BONUS_FACTOR = 500;
+
 api.init(process.env.API_KEY);
-router.use(function summonerLog(req, res, next) {
-	if (req.params.summoner) {
-		console.log("Summoner: " + req.params.summoner + "Time: " + Date.now());
-	};
-	next();
-});
+
 router.get('/', function(req, res, next) {
 	res.send("Hello!");
 });
@@ -84,10 +79,12 @@ function calculateGradeScore(grade) {
 }
 
 function appendChampionName(champion) {
+	var championJson = staticJson.champion();
 	champion.name = championJson.data[champion.championId].name;
 	return champion;
 }
 function appendWinRate(champion) {
+	var ggJson = staticJson.gg();
 	champion.overallWin = 0;
 	champion.overallPos = "none";
 	champion.roles = {};

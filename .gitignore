@@ -1,2 +1,4 @@
 backend/.env
 backend/node_modules/
+backend/data/static-gg.json
+backend/data/champions.json
