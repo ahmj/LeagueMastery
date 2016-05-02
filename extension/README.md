@@ -1,1 +1,0 @@
-# LeagueMastery Web Extension

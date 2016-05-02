@@ -1,4 +1,4 @@
-backend/.env
-backend/node_modules/
-backend/data/static-gg.json
-backend/data/champions.json
+.env
+node_modules/
+data/static-gg.json
+data/champions.json
