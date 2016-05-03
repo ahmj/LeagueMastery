@@ -1,13 +1,13 @@
 extends layout
 
 block content
-	div.ui.middle.aligned.center.aligned.grid
+	div#main.ui.middle.aligned.center.aligned.grid
 		div.ui.one.column.stackable.center.aligned.grid
 			div.three.wide.column.centered
 				h1=title
-			div.ten.wide.column
+			div.seven.wide.column
 				div.ui.fluid.action.input
-					input#summoner(autofocus, type="text", placeholder="Search...")
+					input#summoner(autofocus, type="text", placeholder="Enter your summoner name...")
 					div#region.ui.selection.dropdown
 						input(type="hidden", name="region")
 						i.dropdown.icon
@@ -24,7 +24,6 @@ block content
 							div.item RU
 							div.item TR
 							div.item OCE
-
 					div#search.ui.green.button Search
 block scripts
 	script(type="text/javascript", src="/js/index.js")

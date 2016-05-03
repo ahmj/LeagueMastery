@@ -8,6 +8,13 @@ $(document).ready(function() {
 	$("#search").click(function() {
 		var name = $("#summoner").val();
 		var region = $(".ui.dropdown").dropdown('get text');
-		window.location.href = "/mastery/" + name + "/" + region;
+		$('#main')
+			.transition({
+				animation: 'scale',
+				duration: '1s',
+				onComplete: function() {
+					window.location.href = "/mastery/" + name + "/" + region;
+				}
+			});
 	});
 });
