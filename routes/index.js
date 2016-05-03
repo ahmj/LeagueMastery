@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res) {
-	res.send('secret area.');
+	res.render('index', {title:"League Mastery"});
 });
 
 module.exports = router;

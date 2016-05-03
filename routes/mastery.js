@@ -16,16 +16,19 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:summoner/:region', function(req, res, next) {
-	var summoner = (req.params.summoner).toLowerCase();
-	var region = req.params.region;
+	var summoner = (req.params.summoner);
+	var region = (req.params.region).toLowerCase();
 
 	var cacheKey = summoner + region;
 	var cached = cache.get(cacheKey);
-	if (cached) {return res.json(cached);}
+	if (cached) {return res.render('mastery', {title: summoner, data: JSON.stringify(cached)});}
 	
 	api.Summoner.getByName(summoner, region, function(err, summonerName) {
 		if (err) return next(err); 
-		var id = summonerName[summoner].id;
+		for (var key in summonerName){
+			try{var id = summonerName[key].id;}
+			catch(err) {next(err);}
+		}
 		api.ChampionMastery.getChampions(id, region, function(err, champions) {
 			if (err) return next(err);
 			var data = [];
@@ -37,7 +40,7 @@ router.get('/:summoner/:region', function(req, res, next) {
 			}
 			data.sort(function (a, b) {return (b.score + b.bonus) - (a.score + a.bonus)});
 			cache.set(cacheKey, data);
-			return res.json(data);
+			return res.render('mastery', {title: summoner, data: JSON.stringify(data)});
 		});
 	});
 });

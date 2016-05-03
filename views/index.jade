@@ -1,0 +1,30 @@
+extends layout
+
+block content
+	div.ui.middle.aligned.center.aligned.grid
+		div.ui.one.column.stackable.center.aligned.grid
+			div.three.wide.column.centered
+				h1=title
+			div.ten.wide.column
+				div.ui.fluid.action.input
+					input#summoner(autofocus, type="text", placeholder="Search...")
+					div#region.ui.selection.dropdown
+						input(type="hidden", name="region")
+						i.dropdown.icon
+						div.default.text Region
+						div.menu
+							div.item(selected) NA
+							div.item EUNE
+							div.item EUW
+							div.item KR
+							div.item JP
+							div.item LAN
+							div.item LAS
+							div.item BR
+							div.item RU
+							div.item TR
+							div.item OCE
+
+					div#search.ui.green.button Search
+block scripts
+	script(type="text/javascript", src="/js/index.js")
