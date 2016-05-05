@@ -5,6 +5,7 @@ var path = require('path');
 var routes = require('./routes/index');
 var tasks = require('./tasks/tasks').init();
 var mastery = require('./routes/mastery');
+var api = require('./routes/api');
 
 var port = process.env.PORT || 3000;
 var app = express();
@@ -15,7 +16,7 @@ app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/mastery', mastery);
-
+app.use('/api/mastery', api);
 app.use(function(err, req, res, next) {
 	res.status(err.status || 500);
 	res.send(err.message);

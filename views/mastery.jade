@@ -1,8 +1,152 @@
 extends layout
 
 block content
-	div.ui.middle.aligned.center.aligned.grid
-		div.ui.one.column.stackable.center.aligned.grid
-			div.three.wide.column.centered
-				h1=title
-			div.ten.wide.column
+	div(style="height:70px; clear: both;")
+	div.ui.center.aligned.fluid.container
+		h2.ui.horizontal.divider.header Summoner
+		h1 #{title}
+		div#mastery.ui.basic.compact.segment
+			div#lanes.ui.raised.compact.segment
+				div.ui.top.attached.inverted.black.label Lane
+				div.ui.buttons
+					button#overall.ui.green.button Overall
+					button#top.ui.red.button Top
+					button#jungle.ui.red.button Jungle
+					button#middle.ui.red.button Middle
+					button#adc.ui.red.button ADC
+					button#support.ui.red.button Support
+		div.ui.divider
+		div.ui.center.aligned.container
+			div.ui.three.column.left.aligned.grid
+				div.row
+					div.six.wide.column
+						div#champ0.ui.basic.segment
+							div.title 
+								h4.ui.header.left.aligned
+									img.champ-icon(src="")
+									div.content
+										span.champ-name
+							div.ui.divider
+							div#stats0.ui.small.horizontal.divided.list
+								div.item.score
+									div.ui.mini.violet.statistic
+										div.value 
+										div.label Score
+								div.item.winrate
+									div.ui.mini.orange.statistic
+										div.value 
+										div.label Win Rate
+								div.item.highestGrade
+									div.ui.mini.blue.statistic
+										div.value 
+										div.label Highest Grade
+								div.item.position
+									div.ui.mini.yellow.statistic
+										div.value 
+										div.label Position
+					div.five.wide.column
+						div#champ0build.ui.basic.segment
+							div.title
+								h4.ui.header.middle.aligned
+									img(src="/assets/bot.png")
+									div.content
+										span Highest % Winning Build
+							div.ui.divider
+					div.five.wide.column
+						div#champ0items.ui.basic.segment
+							div.title
+								h4.ui.header.middle.aligned
+									img(src="/assets/bot.png")
+									div.content
+										span Highest % Winning Items
+							div.ui.divider
+				div.row
+					div.six.wide.column
+						div#champ1.ui.basic.segment
+							div.title 
+								h4.ui.header.left.aligned
+									img.champ-icon(src="")
+									div.content
+										span.champ-name
+							div.ui.divider 
+							div#stats1.ui.small.horizontal.divided.list
+								div.item.score
+									div.ui.mini.violet.statistic
+										div.value 
+										div.label Score
+								div.item.winrate
+									div.ui.mini.orange.statistic
+										div.value 
+										div.label Win Rate
+								div.item.highestGrade
+									div.ui.mini.blue.statistic
+										div.value 
+										div.label Highest Grade
+								div.item.position
+									div.ui.mini.yellow.statistic
+										div.value 
+										div.label Position
+					div.five.wide.column
+						div#champ1build.ui.basic.segment
+							div.title
+								h4.ui.header.middle.aligned
+									img(src="/assets/bot.png")
+									div.content
+										span Highest % Winning Build
+							div.ui.divider
+					div.five.wide.column
+						div#champ1items.ui.basic.segment
+							div.title
+								h4.ui.header.middle.aligned
+									img(src="/assets/bot.png")
+									div.content
+										span Highest % Winning Items
+							div.ui.divider
+				div.row
+					div.six.wide.column
+						div#champ2.ui.basic.segment
+							div.title 
+								h4.ui.header.left.aligned
+									img.champ-icon(src="")
+									div.content
+										span.champ-name
+							div.ui.divider
+							div#stats2.ui.small.horizontal.divided.list
+								div.item.score
+									div.ui.mini.violet.statistic
+										div.value 
+										div.label Score
+								div.item.winrate
+									div.ui.mini.orange.statistic
+										div.value 
+										div.label Win Rate
+								div.item.highestGrade
+									div.ui.mini.blue.statistic
+										div.value 
+										div.label Highest Grade
+								div.item.position
+									div.ui.mini.yellow.statistic
+										div.value 
+										div.label Position
+					div.five.wide.column
+						div#champ2build.ui.basic.segment
+							div.title
+								h4.ui.header.middle.aligned
+									img(src="/assets/bot.png")
+									div.content
+										span Highest % Winning Build
+							div.ui.divider
+					div.five.wide.column
+						div#champ2items.ui.basic.segment
+							div.title
+								h4.ui.header.middle.aligned
+									img(src="/assets/bot.png")
+									div.content
+										span Highest % Winning Items
+							div.ui.divider
+
+block scripts
+	script(type="text/javascript", src="/js/mastery.js")
+
+
+

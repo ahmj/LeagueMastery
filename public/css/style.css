@@ -2,6 +2,15 @@ body {
 	font-size: 14px;
     background: #F6F7F8;
 }
-body > .grid {
+#main {
 	height: 100%;
+}
+#mastery{
+	width: 100%;
+}
+#lanes {
+	margin: 0 auto;
+}
+.ui.statistic > .value ~ .label{
+	line-height: 1em;
 }
