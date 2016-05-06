@@ -50,6 +50,7 @@ function addToChampion(champion) {
 	appendChampionName(champion);
 	appendWinRate(champion);
 	appendBonusCalculation(champion);
+	appendChampionBest(champion);
 }
 function calculateScore(champion) {
 	var champion_grade_factor = 0;
@@ -107,6 +108,26 @@ function appendWinRate(champion) {
 function appendBonusCalculation(champion) {
 	champion.bonus = CHAMPION_BONUS_FACTOR * (champion.overallWin / 100);
 	return champion;
+}
+function appendChampionBest(champion) {
+	var ggChamp = staticJson.ggChamp();
+	var current = ggChamp[champion.champKey];
+	champion.items = [];
+	champion.first = [];
+	for (var key in current) {
+		if (current[key].role === champion.overallPos) {
+
+			var currentItems = current[key].items;
+			var currentFirst = current[key].firstItems;
+			champion.skills = current[key].skills.order;
+			for (var key in currentItems) {
+				champion.items.push(currentItems[key].id);
+			}
+			for (var key in currentFirst) {
+				champion.first.push(currentItems[key].id);
+			}
+		}
+	}
 }
 module.exports = router;
 /*

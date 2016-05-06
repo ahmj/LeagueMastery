@@ -19,9 +19,17 @@ module.exports = {
 			var json = JSON.parse(fs.readFileSync(championJsonPath, 'utf8'));
 			var output = {};
 			async.forEachOf(json.data, function(value, key, callback){
-				api.champions.data.general(value.key, function(err, data) {
+				api.champions.data.specific(value.key, function(err, data) {
 					if (err) {return callback(err);}
-					output[value.key] = data;
+					output[value.key] = [];
+					for (var key in data) {
+						var processed = {}
+						processed.role = data[key].role;
+						processed.items = data[key].items.highestWinPercent.items;
+						processed.firstItems = data[key].firstItems.highestWinPercent.items;
+						processed.skills = data[key].skills.highestWinPercent;
+						output[value.key].push(processed);
+					}
 					callback();
 				});
 			}, function(err) {
