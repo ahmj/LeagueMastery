@@ -73,6 +73,7 @@ function updateCurrentLane(lane) {
 	for (var i=0; i < 3; i++) {
 		showChampions(i, lane);
 		showStatistics(i, lane);
+		showBuild(i, lane)
 	}
 }
 function showChampions(id, lane) {
@@ -97,4 +98,24 @@ function showStatistics(id, lane) {
 	$(current + ' .highestGrade .value').text(highestGrade);
 	$(current + ' .position .value').text(overallPos);
 	$(current + ' .level .value img').attr('src', '/assets/levels/' + level + '.png');
+}
+
+function showBuild(id, lane) {
+	var current = '#champ' + id + 'build';
+	var skills = champions[lane][id].skills;
+	$(current +  ' .build-skill-button').replaceWith("&nbsp;");
+	for (var i =0; i < skills.length; i++) {
+		var btn = skills[i].toLowerCase();
+		var colour;
+		if (btn === "q") {
+			colour = "blue";
+		} else if (btn === "w") {
+			colour = "orange";
+		} else if (btn === "e") {
+			colour = "violet";
+		} else if (btn === "r") {
+			colour = "red";
+		}
+		$(current + ' #build-container-' + btn + ' .build-skill-level:nth-child(' + (i+1) + ')').html("<button class='build-skill-button circular ui button icon " + colour + "''>"  + btn.toUpperCase() + "</button>");
+	}
 }
