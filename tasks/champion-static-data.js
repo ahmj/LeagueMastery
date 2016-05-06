@@ -3,7 +3,7 @@ var api = require('leagueapi');
 
 api.init(process.env.API_KEY);
 
-var fileName = './data/champions.json';
+var fileName = './data/json/champions.json';
 
 module.exports = {
 	run: function(callback) {

@@ -3,7 +3,7 @@ var fs = require('fs');
 
 api = api.init(process.env.GG_KEY);
 
-var fileName = './data/static-gg.json';
+var fileName = './data/json/static-gg.json';
 
 module.exports = {
 	run: function(callback) {
