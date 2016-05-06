@@ -1,12 +1,15 @@
 body {
 	font-size: 14px;
-    background: #F6F7F8;
+    background: #FFFFFF;
 }
 #main {
 	height: 100%;
 }
 #mastery{
 	width: 100%;
+}
+#topcontainer {
+	background: #F6F7F8;
 }
 #lanes {
 	margin: 0 auto;
