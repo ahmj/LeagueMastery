@@ -14,7 +14,9 @@ module.exports = {
 		catch (err) {
 			api.statistics.all(function(err, data) {
 				if (err) {return callback(err);}
-				var json = JSON.stringify(data);
+				var json;
+				try {json = JSON.parse(data);}
+				catch(e) {json = JSON.stringify(data)}
 				fs.writeFile(fileName, json, 'utf8', callback);
 				return;
 			});
