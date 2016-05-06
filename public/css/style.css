@@ -12,5 +12,5 @@ body {
 	margin: 0 auto;
 }
 .ui.statistic > .value ~ .label{
-	line-height: 1em;
+	line-height: 2em;
 }

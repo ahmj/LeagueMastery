@@ -90,10 +90,11 @@ function showStatistics(id, lane) {
 	var overallWin = champions[lane][id].overallWin;
 	var highestGrade = champions[lane][id].highestGrade;
 	var overallPos = champions[lane][id].overallPos
-
+	var level = champions[lane][id].championLevel;
 	$(current + ' .score .value').text((score + bonus).toFixed(2));
-	$(current + ' .winrate .value').text(overallWin);
+	$(current + ' .winrate .value').text(overallWin + "%");
 	if (!highestGrade) {highestGrade = "N/A"}
 	$(current + ' .highestGrade .value').text(highestGrade);
 	$(current + ' .position .value').text(overallPos);
+	$(current + ' .level .value img').attr('src', '/assets/levels/' + level + '.png');
 }
