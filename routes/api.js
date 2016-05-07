@@ -31,16 +31,23 @@ router.get('/:summoner/:region', function(req, res, next) {
 		}
 		api.ChampionMastery.getChampions(id, region, function(err, champions) {
 			if (err) return next(err);
+			var output = {};
 			var data = [];
+			var earnedChests = 0;
 			for (var i=0; i < champions.length; i++) {
 				if (!champions[i].chestGranted) {
 					addToChampion(champions[i]);
 					data.push(champions[i]);
+				} else {
+					earnedChests++;
 				}
 			}
+			output.earnedChests = earnedChests;
+			output.totalChampions = Object.keys(staticJson.champion().data).length;
 			data.sort(function (a, b) {return (b.score + b.bonus) - (a.score + a.bonus)});
-			cache.set(cacheKey, data);
-			return res.json(data);
+			output.data = data;
+			cache.set(cacheKey, output);
+			return res.json(output);
 		});
 	});
 });

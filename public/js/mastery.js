@@ -46,7 +46,8 @@ function getJSON() {
 	     ajaxStop: function() { $('#masteries .ui .segment').removeClass("loading"); }    
 	});
 	var path = window.location.pathname;
-	$.get('/api' + path, function(data) {
+	$.get('/api' + path, function(json) {
+		var data = json.data;
 		champions.overall.push(data[0]);
 		champions.overall.push(data[1]);
 		champions.overall.push(data[2]);
@@ -63,6 +64,16 @@ function getJSON() {
 				champions.middle.push(data[key]);
 			}
 		}
+		$('#champ-progress').attr('data-value', json.earnedChests);
+		$('#champ-progress').attr('data-total', json.totalChampions);
+		$('#champ-progress').progress({
+			label: 'percent',
+			text: {
+				active: '{value} / {total} Chests Earned',
+				success: 'All chests earned this season!',
+				percent: '{percent}%',
+			}
+		});
 		updateCurrentLane('overall');
 	}).fail(function () {
 		window.location.href = "/error";
