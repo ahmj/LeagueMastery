@@ -121,10 +121,10 @@ function appendChampionBest(champion) {
 			var currentFirst = current[key].firstItems;
 			champion.skills = current[key].skills.order;
 			for (var key in currentItems) {
-				champion.items.push(currentItems[key].id);
+				champion.items.push(currentItems[key]);
 			}
 			for (var key in currentFirst) {
-				champion.first.push(currentItems[key].id);
+				champion.first.push(currentFirst[key]);
 			}
 		}
 	}

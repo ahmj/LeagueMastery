@@ -8,9 +8,6 @@ var champions = {
 };
 getJSON();
 $(document).ready(function() {
-	$('.ui.accordion').accordion();
-	var path = window.location.pathname;
-
 	$('#overall').click(function() {
 		$('#lanes .buttons .green').removeClass('green').addClass('red');
 		$(this).removeClass('red').addClass('green');
@@ -73,8 +70,11 @@ function updateCurrentLane(lane) {
 	for (var i=0; i < 3; i++) {
 		showChampions(i, lane);
 		showStatistics(i, lane);
-		showBuild(i, lane)
+		showBuild(i, lane);
+		showItems(i, lane);
+		showStartingItems(i, lane);
 	}
+	$('.champ-item').popup();
 }
 function showChampions(id, lane) {
 	var current = '#champ' + id;
@@ -116,6 +116,27 @@ function showBuild(id, lane) {
 		} else if (btn === "r") {
 			colour = "red";
 		}
-		$(current + ' #build-container-' + btn + ' .build-skill-level:nth-child(' + (i+1) + ')').html("<button class='build-skill-button circular ui button icon " + colour + "''>"  + btn.toUpperCase() + "</button>");
+		$(current + ' #build-container-' + btn + ' .build-skill-level:nth-child(' + (i+1) + ')').html("<button class='build-skill-button circular compact ui button icon " + colour + "''>"  + btn.toUpperCase() + "</button>");
+	}
+}
+
+function showItems(id, lane) {
+	var current = '#items' + id;
+	var items = champions[lane][id].items
+	$(current +  ' .item').remove();
+	for (var i=0; i < items.length; i++) {
+		var item = items[i].id;
+		var name = items[i].name;
+		$(current).append('<div class="item"> <img data-variation="inverted" data-content="'+name+'" class="ui circular image champ-item" src="/assets/items/' + item + '.png"> </div>');
+	}
+}
+function showStartingItems(id, lane) {
+	var current = '#starting-items' + id;
+	var items = champions[lane][id].first;
+	$(current +  ' .item').remove();
+	for (var i=0; i < items.length; i++) {
+		var item = items[i].id;
+		var name = items[i].name;
+		$(current).append('<div class="item"> <img data-variation="inverted" data-content="'+name+'" class="ui circular image champ-item" src="/assets/items/' + item + '.png"> </div>');
 	}
 }
