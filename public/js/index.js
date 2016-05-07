@@ -8,6 +8,10 @@ $(document).ready(function() {
 	$("#search").click(function() {
 		var name = $("#summoner").val();
 		var region = $(".ui.dropdown").dropdown('get text');
+		if (name === "") {
+			$('#error').removeClass('hidden').addClass('visible').text("Please enter a valid summoner name!");
+			return;
+		}
 		$('#main')
 			.transition({
 				animation: 'scale',
