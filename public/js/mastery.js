@@ -9,33 +9,33 @@ var champions = {
 getJSON();
 $(document).ready(function() {
 	$('#overall').click(function() {
-		$('#lanes .buttons .green').removeClass('green').addClass('red');
-		$(this).removeClass('red').addClass('green');
+		$('#lanes .buttons .black').removeClass('black');
+		$(this).addClass('black');
 		updateCurrentLane('overall');
 	});
 	$('#top').click(function() {
-		$('#lanes .buttons .green').removeClass('green').addClass('red');
-		$(this).removeClass('red').addClass('green');
+		$('#lanes .buttons .black').removeClass('black');
+		$(this).addClass('black');
 		updateCurrentLane('top');
 	});
 	$('#jungle').click(function() {
-		$('#lanes .buttons .green').removeClass('green').addClass('red');
-		$(this).removeClass('red').addClass('green');
+		$('#lanes .buttons .black').removeClass('black');
+		$(this).addClass('black');
 		updateCurrentLane('jungle');
 	});
 	$('#middle').click(function() {
-		$('#lanes .buttons .green').removeClass('green').addClass('red');
-		$(this).removeClass('red').addClass('green');
+		$('#lanes .buttons .black').removeClass('black');
+		$(this).addClass('black');
 		updateCurrentLane('middle');
 	});
 	$('#adc').click(function() {
-		$('#lanes .buttons .green').removeClass('green').addClass('red');
-		$(this).removeClass('red').addClass('green');
+		$('#lanes .buttons .black').removeClass('black');
+		$(this).addClass('black');
 		updateCurrentLane('adc');
 	});
 	$('#support').click(function() {
-		$('#lanes .buttons .green').removeClass('green').addClass('red').transition;
-		$(this).removeClass('red').addClass('green');
+		$('#lanes .buttons .black').removeClass('black');
+		$(this).addClass('black');
 		updateCurrentLane('support');
 	});
 	

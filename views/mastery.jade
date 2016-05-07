@@ -10,18 +10,30 @@ block content
 				div#lanes.ui.raised.compact.segment
 					div.ui.top.attached.inverted.black.label Lane
 					div.ui.buttons
-						button#overall.ui.green.button
-							img(src="/assets/overall.png")
-						button#top.ui.red.button 
-							img(src="/assets/top.png")
-						button#jungle.ui.red.button 
-							img(src="/assets/jungle.png")
-						button#middle.ui.red.button 
-							img(src="/assets/mid.png")
-						button#adc.ui.red.button 
-							img(src="/assets/bot.png")
-						button#support.ui.red.button 
-							img(src="/assets/support.png")
+						button#overall.ui.black.animated.basic.button
+							div.visible.content
+								img(src="/assets/overall.png")
+							div.hidden.content Overall
+						button#top.ui.animated.basic.button 
+							div.visible.content
+								img(src="/assets/top.png")
+							div.hidden.content Top			
+						button#jungle.ui.animated.basic.button 
+							div.visible.content
+								img(src="/assets/jungle.png")
+							div.hidden.content Jungle	
+						button#middle.ui.animated.basic.button 
+							div.visible.content
+								img(src="/assets/mid.png")
+							div.hidden.content Middle	
+						button#adc.ui.animated.basic.button 
+							div.visible.content
+								img(src="/assets/bot.png")
+							div.hidden.content ADC	
+						button#support.ui.animated.basic.button 
+							div.visible.content
+								img(src="/assets/support.png")
+							div.hidden.content Support	
 			div.ui.divider
 		div#masteries.ui.center.aligned.container
 			div.ui.three.column.left.aligned.grid
