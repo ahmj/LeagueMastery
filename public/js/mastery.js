@@ -64,6 +64,8 @@ function getJSON() {
 			}
 		}
 		updateCurrentLane('overall');
+	}).fail(function () {
+		window.location.href = "/error";
 	});
 }
 function updateCurrentLane(lane) {
