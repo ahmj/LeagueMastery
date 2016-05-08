@@ -26,7 +26,7 @@ module.exports = {
 						var processed = {}
 						processed.role = data[key].role;
 						processed.items = data[key].items.highestWinPercent.items;
-						processed.firstItems = data[key].firstItems.highestWinPercent.firstItems;
+						processed.firstItems = data[key].firstItems.highestWinPercent.items;
 						processed.skills = data[key].skills.highestWinPercent;
 						output[value.key].push(processed);
 					}
