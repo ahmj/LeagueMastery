@@ -65,7 +65,7 @@ function getJSON() {
 			}
 		}
 		$('#champ-progress').attr('data-value', json.earnedChests);
-		$('#champ-progress').attr('data-total', json.totalChampions);
+		$('#champ-progress').attr('data-total', '48'); // 4 chests x 12 months 
 		$('#champ-progress').progress({
 			label: 'percent',
 			text: {

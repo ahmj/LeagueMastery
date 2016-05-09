@@ -43,7 +43,7 @@ router.get('/:summoner/:region', function(req, res, next) {
 				}
 			}
 			output.earnedChests = earnedChests;
-			output.totalChampions = Object.keys(staticJson.champion().data).length;
+			//output.totalChampions = Object.keys(staticJson.champion().data).length;
 			data.sort(function (a, b) {return (b.score + b.bonus) - (a.score + a.bonus)});
 			output.data = data;
 			cache.set(cacheKey, output);
@@ -137,7 +137,3 @@ function appendChampionBest(champion) {
 	}
 }
 module.exports = router;
-/*
-TODO: - Balance suggestion scoring functions
-	  - Fix async issues with fetching static json files
-*/
