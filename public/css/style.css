@@ -1,0 +1,48 @@
+body {
+	font-size: 14px;
+    background: #FFFFFF;
+}
+#main {
+	height: 100%;
+}
+#mastery{
+	width: 100%;
+}
+#topcontainer {
+	background: #F6F7F8;
+}
+#lanes {
+	margin: 0 auto;
+}
+.ui.statistic > .value ~ .label{
+	line-height: 2em;
+}
+.build-level {
+	width: 32px;
+	float: left;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 700px;
+	opacity: 0.5;
+	margin-bottom: 5px;
+}
+#build-container {
+	float: left;
+}
+.build-skill-level {
+	width: 32px;
+	height: 30px;
+	float: left;
+	text-align: center;
+	font-size: 16px;
+	position: relative;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+.champ-item {
+	width: 30px;
+	height: 30px;
+}
+.build-skill-button {
+	cursor:default !important;
+}

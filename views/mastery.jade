@@ -1,0 +1,506 @@
+extends layout
+
+block content
+	div.ui.center.aligned.fluid.container
+		div#topcontainer
+			div(style="height:40px; clear: both;")
+			h2.ui.horizontal.divider.header Summoner
+			h1 #{title}
+			div#mastery.ui.basic.compact.segment
+				div#lanes.ui.raised.compact.segment
+					div.ui.top.attached.inverted.black.label Lane
+					div.ui.buttons
+						button#overall.ui.black.animated.basic.button
+							div.visible.content
+								img(src="/assets/overall.png")
+							div.hidden.content Overall
+						button#top.ui.animated.basic.button 
+							div.visible.content
+								img(src="/assets/top.png")
+							div.hidden.content Top			
+						button#jungle.ui.animated.basic.button 
+							div.visible.content
+								img(src="/assets/jungle.png")
+							div.hidden.content Jungle	
+						button#middle.ui.animated.basic.button 
+							div.visible.content
+								img(src="/assets/mid.png")
+							div.hidden.content Middle	
+						button#adc.ui.animated.basic.button 
+							div.visible.content
+								img(src="/assets/bot.png")
+							div.hidden.content ADC	
+						button#support.ui.animated.basic.button 
+							div.visible.content
+								img(src="/assets/support.png")
+							div.hidden.content Support	
+			div.ui.divider
+		div#masteries.ui.center.aligned.container
+			div#champ-progress.ui.progress.green
+				div.label Total Chests Earned
+				div.bar
+					div.progress
+			div.ui.three.column.left.aligned.grid
+				div.row
+					div.seven.wide.column
+						div#champ0.ui.raised.segment
+							div.title 
+								h4.ui.header.left.aligned
+									img.champ-icon(src="")
+									div.content
+										span.champ-name
+							div.ui.clearing.divider
+							div#stats0.ui.small.horizontal.divided.list
+								div.item.level
+									div.ui.mini.statistic
+										div.value
+											img(src="")
+										div.label Level
+								div.item.score
+									div.ui.mini.violet.statistic
+										div.value 
+										div.label Score
+								div.item.winrate
+									div.ui.mini.orange.statistic
+										div.value 
+										div.label Win Rate
+								div.item.highestGrade
+									div.ui.mini.blue.statistic
+										div.value 
+										div.label Highest Grade
+								div.item.position
+									div.ui.mini.yellow.statistic
+										div.value 
+										div.label Position
+							div(style="clear:both; width:100%")
+							div.ui.divider
+							div#starting-items0.ui.small.horizontal.list
+								div.ui.small.header Starting Items
+							div(style="clear:both; width:100%")
+							div.ui.divider
+							div#items0.ui.small.horizontal.list
+								div.ui.small.header Final Build
+					div.nine.wide.column
+						div#champ0build.ui.basic.segment
+							div.title
+								h4.ui.header.middle.aligned
+									img(src="/assets/skill.jpg")
+									div.content
+										span Skill Order
+							div.ui.divider
+							div#build
+								div#build-content
+									div#build-levels
+										div.build-level 1
+										div.build-level 2
+										div.build-level 3
+										div.build-level 4
+										div.build-level 5
+										div.build-level 6
+										div.build-level 7
+										div.build-level 8
+										div.build-level 9
+										div.build-level 10
+										div.build-level 11
+										div.build-level 12
+										div.build-level 13
+										div.build-level 14
+										div.build-level 15
+										div.build-level 16
+										div.build-level 17
+										div.build-level 18
+									div.build-skill
+										div.build-icon
+										div#build-container-q
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;	
+									div.build-skill
+										div.build-icon
+										div#build-container-w
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+									div.build-skill
+										div.build-icon
+										div#build-container-e
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+									div.build-skill
+										div.build-icon
+										div#build-container-r
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+				div.row
+					div.seven.wide.column
+						div#champ1.ui.segment
+							div.title 
+								h4.ui.header.left.aligned
+									img.champ-icon(src="")
+									div.content
+										span.champ-name
+							div.ui.divider 
+							div#stats1.ui.small.horizontal.divided.list
+								div.item.level
+									div.ui.mini.statistic
+										div.value
+											img(src="")
+										div.label Level
+								div.item.score
+									div.ui.mini.violet.statistic
+										div.value 
+										div.label Score
+								div.item.winrate
+									div.ui.mini.orange.statistic
+										div.value 
+										div.label Win Rate
+								div.item.highestGrade
+									div.ui.mini.blue.statistic
+										div.value 
+										div.label Highest Grade
+								div.item.position
+									div.ui.mini.yellow.statistic
+										div.value 
+										div.label Position
+							div(style="clear:both; width:100%")
+							div.ui.divider
+							div#starting-items1.ui.small.horizontal.list
+								div.ui.small.header Starting Items
+							div(style="clear:both; width:100%")
+							div.ui.divider
+							div#items1.ui.small.horizontal.list
+								div.ui.small.header Final Build
+					div.nine.wide.column
+						div#champ1build.ui.basic.segment
+							div.title
+								h4.ui.header.middle.aligned
+									img(src="/assets/skill.jpg")
+									div.content
+										span Skill Order
+							div.ui.divider
+							div#build
+								div#build-content
+									div#build-levels
+										div.build-level 1
+										div.build-level 2
+										div.build-level 3
+										div.build-level 4
+										div.build-level 5
+										div.build-level 6
+										div.build-level 7
+										div.build-level 8
+										div.build-level 9
+										div.build-level 10
+										div.build-level 11
+										div.build-level 12
+										div.build-level 13
+										div.build-level 14
+										div.build-level 15
+										div.build-level 16
+										div.build-level 17
+										div.build-level 18
+									div.build-skill
+										div.build-icon
+										div#build-container-q
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+									div.build-skill
+										div.build-icon
+										div#build-container-w
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+									div.build-skill
+										div.build-icon
+										div#build-container-e
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+									div.build-skill
+										div.build-icon
+										div#build-container-r
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+				div.row
+					div.seven.wide.column
+						div#champ2.ui.segment
+							div.title 
+								h4.ui.header.left.aligned
+									img.champ-icon(src="")
+									div.content
+										span.champ-name
+							div.ui.divider
+							div#stats2.ui.small.horizontal.divided.list
+								div.item.level
+									div.ui.mini.statistic
+										div.value
+											img(src="")
+										div.label Level
+								div.item.score
+									div.ui.mini.violet.statistic
+										div.value 
+										div.label Score
+								div.item.winrate
+									div.ui.mini.orange.statistic
+										div.value 
+										div.label Win Rate
+								div.item.highestGrade
+									div.ui.mini.blue.statistic
+										div.value 
+										div.label Highest Grade
+								div.item.position
+									div.ui.mini.yellow.statistic
+										div.value 
+										div.label Position
+							div(style="clear:both; width:100%")
+							div.ui.divider
+							div#starting-items2.ui.small.horizontal.list
+								div.ui.small.header Starting Items
+							div(style="clear:both; width:100%")
+							div.ui.divider
+							div#items2.ui.small.horizontal.list
+								div.ui.small.header Final Build
+
+					div.nine.wide.column
+						div#champ2build.ui.basic.segment
+							div.title
+								h4.ui.header.middle.aligned
+									img(src="/assets/skill.jpg")
+									div.content
+										span Skill Order
+							div.ui.divider
+							div#build
+								div#build-content
+									div#build-levels
+										div.build-level 1
+										div.build-level 2
+										div.build-level 3
+										div.build-level 4
+										div.build-level 5
+										div.build-level 6
+										div.build-level 7
+										div.build-level 8
+										div.build-level 9
+										div.build-level 10
+										div.build-level 11
+										div.build-level 12
+										div.build-level 13
+										div.build-level 14
+										div.build-level 15
+										div.build-level 16
+										div.build-level 17
+										div.build-level 18
+									div.build-skill
+										div.build-icon
+										div#build-container-q
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+									div.build-skill
+										div.build-icon
+										div#build-container-w
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+									div.build-skill
+										div.build-icon
+										div#build-container-e
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+									div.build-skill
+										div.build-icon
+										div#build-container-r
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+											div.build-skill-level &nbsp;
+
+block scripts
+	script(type="text/javascript", src="/js/mastery.js")
+
+
+
