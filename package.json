@@ -1,7 +1,8 @@
 {
   "name": "LeagueMastery",
-  "version": "0.0.1",
-  "description": "The backend system required to store, retrieve, and respond to notification requests from the LeagueMastery extension",
+  "version": "1.0.0",
+  "description": "An application that analyzes a League of Legends players champion mastery and generates suggestions based on multiple factors. This allows players to choose
+  champions that will maximize the possiblity of earning a hextech crate. ",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
