@@ -6,7 +6,7 @@ https://leaguemastery.herokuapp.com/
 
 **League Mastery** is an application to provide suggestions on optimizing the chances of earning a Mastery Chest. Our application analyzes specific factors on every champion for the given summoner deriving a computed score. The factors consist of the highest grade achieved, champion mastery level and overall Champion win rate provided to us by the Champion.GG API.  
 
-**League Mastery** is the entry for the  [Riot Games API Challenge 2016](https://developer.riotgames.com/discussion/announcements/show/eoq3tZd1), Usability/Practicality Category. By providing a curated selection of champions with "cheat-sheets" that include skill builds, recommended starting items and final items we focus on providing a simple yet packaged experience for players.
+**League Mastery** is an entry for the  [Riot Games API Challenge 2016](https://developer.riotgames.com/discussion/announcements/show/eoq3tZd1), Usability/Practicality Category. By providing a curated selection of champions with "cheat-sheets" that include skill builds, recommended starting items and final items we focus on providing a simple yet packaged experience for players.
 
 ## Development
 
