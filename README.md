@@ -20,12 +20,12 @@ https://leaguemastery.herokuapp.com/
 ## Documentation
 ### Tasks
 When the app launches we first initialize and run the tasks specified within `tasks.js`. Currently, the tasks serves to fetch
-and copy the JSON static files from three endpoints, Champion static data from the riot API, Champion statistics information from the championGG API, and specific build and item information provided from the championGG api. These JSON files are only ever changed when a patch occurs so it is recommended to wipe the `/data/json/` folder a few days after the patch lands which ensures both the riot API and championGG API are updated to reflect the changes.
+and copy the JSON static files from three endpoints, Champion static data from the Riot API, Champion statistics information from the Champion.GG API, and specific build and item information provided from the Champion.GG api. These JSON files are only ever changed when a patch occurs so it is recommended to wipe the `/data/json/` folder a few days after the patch lands which ensures both the Riot API and Champion.GG API are updated to reflect the changes.
 
-Note: Due to stability issues with the championGG API we have included JSON files for the current patch (6.9)
+Note: Due to stability issues with the Champion.GG API we have included JSON files for the current patch (6.9)
 ### API
 
-Inside `api.js` you will find the mastery route for the application. The function calls the riot API mastery endpoint for the specified summoner to fetch the champion mastery data. Afterword’s we calculate the score as well as use the JSON files fetched by our tasks function to assemble and build the final product which will used within our frontend system.
+Inside `api.js` you will find the mastery route for the application. The function calls the Riot API mastery endpoint for the specified summoner to fetch the champion mastery data. Afterword’s we calculate the score as well as use the JSON files fetched by our tasks function to assemble and build the final product which will used within our frontend system.
 
 An example call found here:
 http://leaguemastery.herokuapp.com/api/mastery/thegozaq/na
