@@ -1,8 +1,7 @@
 {
   "name": "LeagueMastery",
   "version": "1.0.0",
-  "description": "An application that analyzes a League of Legends players champion mastery and generates suggestions based on multiple factors. This allows players to choose
-  champions that will maximize the possibility of earning a hextech crate. ",
+  "description": "An application that analyzes a League of Legends players champion mastery and generates suggestions based on multiple factors. This allows players to choose champions that will maximize the possibility of earning a hextech crate.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
