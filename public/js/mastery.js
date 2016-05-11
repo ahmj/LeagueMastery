@@ -74,6 +74,7 @@ function getJSON() {
 				percent: '{percent}%',
 			}
 		});
+		disableEmptyLanes();
 		updateCurrentLane('overall');
 	}).fail(function () {
 		window.location.href = "/error";
@@ -151,5 +152,13 @@ function showStartingItems(id, lane) {
 		var item = items[i].id;
 		var name = items[i].name;
 		$(current).append('<div class="item"> <img data-variation="inverted" data-content="'+name+'" class="ui circular image champ-item" src="/assets/items/' + item + '.png"> </div>');
+	}
+}
+
+function disableEmptyLanes() {
+	for (var key in champions) {
+		if (champions[key].length <= 0) {
+			$('#' + key).addClass('disabled');
+		}
 	}
 }
