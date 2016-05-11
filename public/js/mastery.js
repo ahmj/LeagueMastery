@@ -82,6 +82,9 @@ function getJSON() {
 }
 function updateCurrentLane(lane) {
 	for (var i=0; i < 3; i++) {
+		if (disableEmptyCards(i, lane)) {
+			continue;
+		}
 		showChampions(i, lane);
 		showStatistics(i, lane);
 		showBuild(i, lane);
@@ -160,5 +163,17 @@ function disableEmptyLanes() {
 		if (champions[key].length <= 0) {
 			$('#' + key).addClass('disabled');
 		}
+	}
+}
+
+function disableEmptyCards(id, lane) {
+	if (!champions[lane][id]) {
+		$('#champ' + id).hide();
+		$('#champ' + id + 'build').hide();
+		return true;
+	} else {
+		$('#champ' + id).show();
+		$('#champ' + id + 'build').show();
+		return false;
 	}
 }
