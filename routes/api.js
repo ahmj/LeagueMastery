@@ -53,11 +53,15 @@ router.get('/:summoner/:region', function(req, res, next) {
 });
 
 function addToChampion(champion) {
-	calculateScore(champion);
-	appendChampionName(champion);
-	appendWinRate(champion);
-	appendBonusCalculation(champion);
-	appendChampionBest(champion);
+	try {
+		calculateScore(champion);
+		appendChampionName(champion);
+		appendWinRate(champion);
+		appendBonusCalculation(champion);
+		appendChampionBest(champion);
+	} catch (e) {
+		console.log("Failed to add champion id: " + champion.championId);
+	}
 }
 function calculateScore(champion) {
 	var champion_grade_factor = 0;
