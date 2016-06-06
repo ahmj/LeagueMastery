@@ -1,6 +1,6 @@
 {
     "type": "champion",
-    "version": "6.9.1",
+    "version": "6.11.1",
     "data": {
         "1": {
             "id": 1,
@@ -679,6 +679,12 @@
             "key": "Velkoz",
             "name": "Vel'Koz",
             "title": "the Eye of the Void"
+        },
+        "163": {
+            "id": 163,
+            "key": "Taliyah",
+            "name": "Taliyah",
+            "title": "the Stoneweaver"
         },
         "201": {
             "id": 201,
